@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-device" version="0.2.3">
+    <name>IAP</name>
+    <description>Cordova IAP Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,ap</keywords>
+    <js-module src="www/iap.js" name="device">
+        <clobbers target="iap" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Iap">
+                <param name="ios-package" value="CDVIap"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVIap.h" />
+        <source-file src="src/ios/CDVIap.m" />
+    </platform>
+</plugin>
